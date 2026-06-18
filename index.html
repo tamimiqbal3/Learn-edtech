@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamim's Classroom | Premium EdTech</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: #050505; color: #ffffff; padding-bottom: 20px; }
+        .container { max-width: 450px; margin: auto; padding: 20px; }
+
+        /* Slow and Smooth Animation */
+        @keyframes fadeInSlide { 
+            from { opacity: 0; transform: translateY(40px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        
+        .animate-item { 
+            animation: fadeInSlide 1.2s ease-out forwards; 
+            opacity: 0; 
+        }
+
+        /* Animation Delays */
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.7s; }
+        .delay-4 { animation-delay: 1.0s; }
+        .delay-5 { animation-delay: 1.3s; }
+        .delay-6 { animation-delay: 1.6s; }
+
+        .header { margin: 40px 0; text-align: center; }
+        .header h1 { font-size: 2.2rem; background: linear-gradient(90deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .instructor-section { display: flex; gap: 15px; margin-bottom: 25px; }
+        .inst-box { flex: 1; background: #111; padding: 15px; border-radius: 20px; border: 1px solid #222; text-align: center; }
+        .inst-box h4 { color: #38bdf8; font-size: 0.8rem; margin-bottom: 5px; }
+        .inst-box p { font-size: 0.9rem; font-weight: 600; }
+
+        .premium-card { background: linear-gradient(180deg, #111 0%, #050505 100%); border: 1px solid #222; padding: 25px; border-radius: 25px; margin-bottom: 20px; }
+        .badge { background: #38bdf8; color: #000; padding: 4px 10px; border-radius: 6px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+        .features-list { margin: 20px 0; }
+        .features-list li { list-style: none; display: flex; align-items: center; margin-bottom: 10px; font-size: 0.9rem; color: #a1a1aa; }
+        .features-list li::before { content: "✓"; color: #38bdf8; margin-right: 10px; }
+
+        .cta-btn { width: 100%; padding: 18px; border-radius: 15px; background: #fff; color: #000; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; }
+        .cta-btn:hover { background: #38bdf8; color: #fff; }
+
+        /* Footer Style */
+        .footer { margin-top: 40px; text-align: center; font-size: 0.9rem; color: #666; }
+
+        #modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; justify-content: center; align-items: center; }
+        .modal-content { background: #111; padding: 40px; border-radius: 25px; text-align: center; border: 1px solid #333; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header animate-item delay-1">
+        <h1>Classroom</h1>
+    </div>
+
+    <div class="instructor-section animate-item delay-2">
+        <div class="inst-box">
+            <h4>Instructor 01</h4>
+            <p>Tamim Iqbal</p>
+        </div>
+        <div class="inst-box">
+            <h4>Instructor 02</h4>
+            <p>Asif Khan</p>
+        </div>
+    </div>
+
+    <div class="premium-card animate-item delay-3">
+        <span class="badge">Class - 9/10</span>
+        <h2>Science</h2>
+        <ul class="features-list">
+            <li>গণিত, পদার্থবিজ্ঞান, রসায়ন ও জীববিজ্ঞান একত্রে কাঠামোবদ্ধভাবে শেখা</li>
+            <li>অধ্যায়ভিত্তিক লাইভ সলভিং</li>
+            <li>প্রিমিয়াম পিডিএফ লেকচার নোট</li>
+        </ul>
+        <button class="cta-btn" onclick="showModal()">এখনই এনরোল করুন</button>
+    </div>
+
+    <div class="premium-card animate-item delay-4">
+        <span class="badge" style="background: #fbbf24;">Class - 9/10</span>
+        <h2>Comeback</h2>
+        <ul class="features-list">
+            <li>সকল বিষয়ের ওয়ানশট ক্লাস</li>
+            <li>গত ৫ বছরের বোর্ড প্রশ্ন সমাধান</li>
+            <li>অধ্যায় ভিত্তিক নোট</li>
+        </ul>
+        <button class="cta-btn" onclick="showModal()">এখনই এনরোল করুন</button>
+    </div>
+
+    <div class="premium-card animate-item delay-5">
+        <span class="badge">After SSC</span>
+        <h2>Science</h2>
+        <ul class="features-list">
+            <li>নটরডেম প্রস্তুতির সম্পূর্ণ গাইড লাইন</li>
+            <li>স্কিল ডেভেলপমেন্ট</li>
+            <li>নেটওয়ার্কিং</li>
+        </ul>
+        <button class="cta-btn" onclick="showModal()">এখনই এনরোল করুন</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer animate-item delay-6">
+        <p>Support: <a href="https://support.tamimiq.shop" target="_blank" style="color: #38bdf8; text-decoration: none; font-weight: bold;">support.tamimiq.shop</a></p>
+    </div>
+</div>
+
+<div id="modal" onclick="hideModal()">
+    <div class="modal-content">
+        <h2 style="color: #38bdf8;">Coming Soon</h2>
+    </div>
+</div>
+
+<script>
+    function showModal() { document.getElementById('modal').style.display = 'flex'; }
+    function hideModal() { document.getElementById('modal').style.display = 'none'; }
+</script>
+
+</body>
+</html>
